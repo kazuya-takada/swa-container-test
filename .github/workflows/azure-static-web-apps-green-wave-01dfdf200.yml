@@ -33,7 +33,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
         env: # Add environment variables here
           is_static_export: true
-
+          NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL }}
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
