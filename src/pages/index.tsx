@@ -36,14 +36,13 @@ const Home: NextPage = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <p className="pb-3">フロント:Azure Static Web Apps</p>
-      <p className="pb-3">バックエンド:Azure Container Apps</p>
-      <p className="pb-3 pl-5">
-        ・double-api, double-api-sidecar(イングレスを外部に設定)
+      <p className="pb-3 font-bold">
+        ※一番最初はコンテナ起動に時間がかかり、数値を結果して返るのに時間かかることがあります（30秒くらい）
       </p>
-      <p className="pb-3 pl-5">
-        ・add-api, add-api-sidecar(イングレスは設定しない)
+      <p className="pb-3">
+        （逆にいうと、コンテナがずっと起動しているわけではなく、サーバレスであることが確認できる）
       </p>
+
       <form onSubmit={handleSubmit} className="flex items-center">
         <input
           type="number"
@@ -60,6 +59,7 @@ const Home: NextPage = () => {
           Result: <strong>{result}</strong>
         </div>
       )}
+      <img src="architecture.png" alt="アーキテクチャ図" />
     </div>
   );
 };
