@@ -36,10 +36,13 @@ const Home: NextPage = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <p className="pb-3">
-        Client:Azure Static Web Apps, Backend:Azure Container Apps([double-api,
-        double-api-sidecar, (イングレスを外部に設定)], [add-api,
-        add-api-sidecar], (イングレスは設定しない))
+      <p className="pb-3">フロント:Azure Static Web Apps</p>
+      <p className="pb-3">バックエンド:Azure Container Apps</p>
+      <p className="pb-3 pl-5">
+        ・double-api, double-api-sidecar(イングレスを外部に設定)
+      </p>
+      <p className="pb-3 pl-5">
+        ・add-api, add-api-sidecar(イングレスは設定しない)
       </p>
       <form onSubmit={handleSubmit} className="flex items-center">
         <input
