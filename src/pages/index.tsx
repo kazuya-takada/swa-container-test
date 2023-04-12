@@ -8,6 +8,7 @@ const BASE_URL =
 const Home: NextPage = () => {
   const [number, setNumber] = useState(0);
   const [result, setResult] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void =>
     setNumber(Number(e.target.value));
@@ -37,7 +38,7 @@ const Home: NextPage = () => {
   return (
     <div className="container mx-auto p-4">
       <p className="pb-3 font-bold">
-        ※一番最初はコンテナ起動に時間がかかり、数値を結果して返るのに時間かかることがあります（30秒くらい）
+        ※一番最初はコンテナ起動に時間がかかり、結果が返るのに時間かかることがあります（１分くらい）
       </p>
       <p className="pb-3">
         （逆にいうと、コンテナがずっと起動しているわけではなく、サーバレスであることが確認できる）
@@ -54,6 +55,9 @@ const Home: NextPage = () => {
           Submit
         </button>
       </form>
+
+      {isLoading && <div className="mt-4">Loading...</div>}
+
       {result !== null && (
         <div className="mt-4">
           Result: <strong>{result}</strong>
