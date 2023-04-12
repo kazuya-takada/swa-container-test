@@ -2,7 +2,6 @@ import { NextPage } from "next";
 import { ChangeEvent, FormEvent, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 
-// NEXT_PUBLIC_API_BASE_URLは/apiにする
 const BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
@@ -38,14 +37,9 @@ const Home: NextPage = () => {
   return (
     <div className="container mx-auto p-4">
       <p className="pb-3">
-        client:4000 → double-api:3000 → dapr-api-sidecar:3500 →
-        add-api-sidecar:3501 → add-api:3500
-      </p>
-      <p className="pb-3">
-        例えば、double-apiとdapr-api-sidecarは一つのポッドになる。（ポッドはコンテナの集まり。double-apiとdapr-api-sidecarはそれぞれコンテナになるので、このポッドには2つのコンテナが存在する）
-      </p>
-      <p className="pb-3">
-        ポッドは同じホストになるため、ローカルホスト通信ができる。そのうえでサイドカーとサイドカーはid指定でいい感じに探してくれる
+        Client:Azure Static Web Apps, Backend:Azure Container Apps([double-api,
+        double-api-sidecar, (イングレスを外部に設定)], [add-api,
+        add-api-sidecar], (イングレスは設定しない))
       </p>
       <form onSubmit={handleSubmit} className="flex items-center">
         <input
