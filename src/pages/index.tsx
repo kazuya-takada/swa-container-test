@@ -56,7 +56,7 @@ const Home: NextPage = () => {
           className="border p-2 rounded-md mr-2"
         />
         <button type="submit" className="bg-blue-500 text-white p-2 rounded-md">
-          Submit
+          計算
         </button>
       </form>
 
@@ -64,7 +64,7 @@ const Home: NextPage = () => {
 
       {result !== null && (
         <div className="mt-4">
-          Result: <strong>{result}</strong>
+          結果: <strong>{result}</strong>
         </div>
       )}
       <img src="architecture.png" alt="アーキテクチャ図" />
