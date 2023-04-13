@@ -14,6 +14,7 @@ const Home: NextPage = () => {
     setNumber(Number(e.target.value));
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    setResult(null);
     setIsLoading(true);
     e.preventDefault();
 
